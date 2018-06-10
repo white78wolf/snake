@@ -54,5 +54,19 @@ namespace Snake
             else if (key == ConsoleKey.DownArrow)
                 direction = Direction.DOWN;
         }
+
+        internal bool Eat(Point food)
+        {
+            Point head = GetNextPoint();
+            //if (head.x == food.x && head.y == food.y) // we should incapsulate this in Point class - 'cause it's about points
+            if (head.IsHit(food))
+            {
+                food.sym = head.sym;
+                pList.Add(food);
+                return true;
+            }
+            else
+                return false;
+        }
     }
 }
