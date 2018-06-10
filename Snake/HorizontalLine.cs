@@ -18,13 +18,6 @@ namespace Snake
                 //Point p = new Point(x, y, sym);
                 //pList.Add(p);
             }
-        }
-
-        public override void DrawLine()
-        {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            base.DrawLine();
-            Console.ForegroundColor = ConsoleColor.White;            
-        }
+        }       
     }
 }
