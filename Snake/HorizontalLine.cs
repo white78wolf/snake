@@ -19,5 +19,12 @@ namespace Snake
                 //pList.Add(p);
             }
         }
+
+        public override void DrawLine()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            base.DrawLine();
+            Console.ForegroundColor = ConsoleColor.White;            
+        }
     }
 }
