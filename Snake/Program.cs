@@ -46,6 +46,8 @@ namespace Snake
                     snake.HadleKey(key.Key);
                 }
             }
+
+            Finish.GameOver();
         }
     }
 }
