@@ -68,11 +68,12 @@ namespace Snake
 
         internal bool Eat(Point food)
         {
-            Point head = GetNextPoint();
-            //if (head.x == food.x && head.y == food.y) // we should incapsulate this in Point class - 'cause it's about points
+            Point head = GetNextPoint();            
             if (head.IsHit(food))
             {
-                food.sym = head.sym;
+                food.sym = head.sym;                
+                food.Draw();
+
                 pList.Add(food);
                 return true;
             }

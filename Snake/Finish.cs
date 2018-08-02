@@ -26,9 +26,7 @@ namespace Snake
             Console.WriteLine("Press Enter to restart...");
 
             Console.SetCursorPosition(32, 14);
-            Console.WriteLine("...or Esc to quit");
-
-            //Console.ReadKey();
+            Console.WriteLine("...or Esc to quit");            
 
             ConsoleKeyInfo key = Console.ReadKey();
 
