@@ -16,6 +16,8 @@ namespace Snake
 
             while (true)
             {
+                int speed = 100;
+
                 walls.Draw();
 
                 // Points drawing
@@ -35,6 +37,7 @@ namespace Snake
 
                     if (snake.Eat(food))
                     {
+                        speed -= 3;
                         food = foodCreator.CreateFood(snake);
                         food.Draw();
                     }
@@ -43,10 +46,10 @@ namespace Snake
                         snake.Move();
                     }
 
-                    Thread.Sleep(100);
+                    Thread.Sleep(speed);
                     if (Console.KeyAvailable)
                     {
-                        ConsoleKeyInfo key = Console.ReadKey(true); // Это убрало появление пустого символа в теле змейки                                                                     
+                        ConsoleKeyInfo key = Console.ReadKey(true); // True в скобках убрало появление пустого символа в теле змейки                                                                     
                                                                     // при повороте вниз и налево
                         if (key.Key == ConsoleKey.Escape)
                             break;
