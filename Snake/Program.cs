@@ -24,7 +24,8 @@ namespace Snake
                 snake.Draw();
 
                 FoodCreator foodCreator = new FoodCreator(80, 25, '$');
-                Point food = foodCreator.CreateFood();
+                Point food = foodCreator.CreateFood();                
+
                 food.Draw();
 
                 while (true)
@@ -45,8 +46,8 @@ namespace Snake
                     Thread.Sleep(100);
                     if (Console.KeyAvailable)
                     {
-                        ConsoleKeyInfo key = Console.ReadKey();
-                        
+                        ConsoleKeyInfo key = Console.ReadKey(true); // Это убрало появление пустого символа в теле змейки                                                                     
+                                                                    // при повороте в низ и на лево
                         if (key.Key == ConsoleKey.Escape)
                             break;
 

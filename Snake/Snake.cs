@@ -67,13 +67,11 @@ namespace Snake
         }
 
         internal bool Eat(Point food)
-        {
-            Point head = GetNextPoint();            
+        {            
+            Point head = this.pList.Last();
             if (head.IsHit(food))
             {
-                food.sym = head.sym;                
-                food.Draw();
-
+                food.sym = head.sym;
                 pList.Add(food);
                 return true;
             }
