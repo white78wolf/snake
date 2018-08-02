@@ -78,5 +78,17 @@ namespace Snake
             else
                 return false;
         }
+        // Метод для проверки, не создалась ли еда внутри змейки
+        internal bool FoodOnSnake(int x, int y)
+        {
+            foreach (var p in this.pList)
+            {
+                if (p.x == x && p.y == y)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

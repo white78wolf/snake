@@ -20,13 +20,23 @@ namespace Snake
             this.mapHeight = mapHeight;
             this.sym = sym;
         }
-
-        public Point CreateFood()
+        
+        internal Point CreateFood(Snake snake)
         {
-            int x = random.Next(2, mapWidth - 2);
-            int y = random.Next(2, mapHeight - 2);
+            int x;
+            int y;
 
-            return new Point(x, y, sym);
+            do
+            {
+                x = this.random.Next(2, this.mapWidth - 2);
+                y = this.random.Next(2, this.mapHeight - 2);
+            }
+            while (snake.FoodOnSnake(x, y)); // Координаты еды не должны совпасть с координатами змейки
+
+            var food = new Point(x, y, this.sym);
+            food.Draw();
+
+            return food;
         }
     }
 }
