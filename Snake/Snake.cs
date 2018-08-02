@@ -52,18 +52,18 @@ namespace Snake
                     return true;
             }
             return false;
-        }
+        }        
 
         public void HadleKey(ConsoleKey key)
         {
-            if (key == ConsoleKey.LeftArrow)
+            if (key == ConsoleKey.LeftArrow & (direction == Direction.UP || direction == Direction.DOWN))
                 direction = Direction.LEFT;
-            else if (key == ConsoleKey.RightArrow)
+            else if (key == ConsoleKey.RightArrow & (direction == Direction.UP || direction == Direction.DOWN))
                 direction = Direction.RIGHT;
-            else if (key == ConsoleKey.UpArrow)
-                direction = Direction.UP;
-            else if (key == ConsoleKey.DownArrow)
+            else if (key == ConsoleKey.DownArrow & (direction == Direction.LEFT || direction == Direction.RIGHT))
                 direction = Direction.DOWN;
+            else if (key == ConsoleKey.UpArrow & (direction == Direction.LEFT || direction == Direction.RIGHT))
+                direction = Direction.UP;
         }
 
         internal bool Eat(Point food)
