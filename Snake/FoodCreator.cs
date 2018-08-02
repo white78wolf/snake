@@ -11,14 +11,16 @@ namespace Snake
         private int mapWidth;
         private int mapHeight;
         private char sym;
+        private char[] symbols = { '@', '#', '$', '%', '&' };
+        private String[] colors = ConsoleColor.GetNames(typeof(ConsoleColor));
 
         Random random = new Random();
 
-        public FoodCreator(int mapWidth, int mapHeight, char sym)
+        public FoodCreator(int mapWidth, int mapHeight)
         {
             this.mapWidth = mapWidth;
             this.mapHeight = mapHeight;
-            this.sym = sym;
+            this.sym = symbols[this.random.Next(0, 4)];
         }
         
         internal Point CreateFood(Snake snake)
@@ -33,7 +35,10 @@ namespace Snake
             }
             while (snake.FoodOnSnake(x, y)); // Координаты еды не должны совпасть с координатами змейки
 
-            var food = new Point(x, y, this.sym);
+            var food = new Point(x, y, this.symbols[this.random.Next(0, 4)]);            
+            ConsoleColor color = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), colors[random.Next(1, 15)]);
+            Console.ForegroundColor = color;
+
             food.Draw();
 
             return food;

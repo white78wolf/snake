@@ -43,7 +43,7 @@ namespace Snake
             if (key.Key == ConsoleKey.Enter)
             {
                 Console.Clear();
-                Console.ForegroundColor = ConsoleColor.White;
+                Console.ResetColor();
                 return;
             }              
         }        
