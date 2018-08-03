@@ -17,6 +17,7 @@ namespace Snake
             while (true)
             {
                 int speed = 100;
+                int score = 0;
 
                 walls.Draw();
 
@@ -39,6 +40,7 @@ namespace Snake
                     if (snake.Eat(food))
                     {
                         speed -= 3;
+                        score++;
                         food = foodCreator.CreateFood(snake);
 
                         food.Draw();
@@ -61,7 +63,7 @@ namespace Snake
                     }
                 }               
                                 
-                Finish.GameOver();
+                Finish.GameOver(score);
 
                 if (Finish.WannaToExit == true)
                     break;                

@@ -10,22 +10,25 @@ namespace Snake
     {
         public static bool WannaToExit = false;        
 
-        public static void GameOver()
+        public static void GameOver(int score)
         {
             Console.Clear();
             Console.CursorVisible = false;
 
-            Console.SetCursorPosition(35, 11);
+            Console.SetCursorPosition(35, 9);
             Console.ForegroundColor = ConsoleColor.Yellow;
 
             Console.WriteLine("Game Over");            
 
             Thread.Sleep(1000);
 
+            Console.SetCursorPosition(35, 11);
+            Console.WriteLine("SCORES: {0}", score);            
+
             Console.SetCursorPosition(29, 13);
             Console.WriteLine("Press Enter to restart...");
 
-            Console.SetCursorPosition(32, 14);
+            Console.SetCursorPosition(32, 15);
             Console.WriteLine("...or Esc to quit");            
 
             ConsoleKeyInfo key = Console.ReadKey();
