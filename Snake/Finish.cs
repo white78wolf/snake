@@ -8,9 +8,9 @@ namespace Snake
 {
     class Finish
     {
-        public static bool WannaToExit = false;        
+        public static bool WannaToExit = false;
 
-        public static void GameOver(int score)
+        public static void GameOver(int score, string time)
         {
             Console.Clear();
             Console.CursorVisible = false;
@@ -22,13 +22,13 @@ namespace Snake
 
             Thread.Sleep(1000);
 
-            Console.SetCursorPosition(35, 11);
-            Console.WriteLine("SCORES: {0}", score);            
+            Console.SetCursorPosition(28, 11);
+            Console.WriteLine("SCORES: {0}, TIME: {1}", score, time);            
 
-            Console.SetCursorPosition(29, 13);
+            Console.SetCursorPosition(28, 13);
             Console.WriteLine("Press Enter to restart...");
 
-            Console.SetCursorPosition(32, 15);
+            Console.SetCursorPosition(31, 14);
             Console.WriteLine("...or Esc to quit");            
 
             ConsoleKeyInfo key = Console.ReadKey();

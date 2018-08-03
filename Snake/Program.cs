@@ -18,6 +18,7 @@ namespace Snake
             {
                 int speed = 100;
                 int score = 0;
+                TimeOfPlaying time = new TimeOfPlaying(DateTime.Now);
 
                 walls.Draw();
 
@@ -30,7 +31,7 @@ namespace Snake
                 Point food = foodCreator.CreateFood(snake);                
 
                 food.Draw();                
-                Console.ResetColor();
+                Console.ResetColor();                
 
                 while (true)
                 {
@@ -61,9 +62,9 @@ namespace Snake
 
                         snake.HadleKey(key.Key);                            
                     }
-                }               
+                }                
                                 
-                Finish.GameOver(score);
+                Finish.GameOver(score, time.StopGame(DateTime.Now));
 
                 if (Finish.WannaToExit == true)
                     break;                
