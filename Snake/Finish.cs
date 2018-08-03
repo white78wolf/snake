@@ -18,17 +18,19 @@ namespace Snake
             Console.SetCursorPosition(35, 9);
             Console.ForegroundColor = ConsoleColor.Yellow;
 
-            Console.WriteLine("Game Over");            
+            Console.WriteLine("GAME OVER");            
 
             Thread.Sleep(1000);
 
-            Console.SetCursorPosition(28, 11);
+            Console.SetCursorPosition(27, 11);
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("SCORES: {0}, TIME: {1}", score, time);            
 
-            Console.SetCursorPosition(28, 13);
+            Console.SetCursorPosition(27, 13);
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Press Enter to restart...");
 
-            Console.SetCursorPosition(31, 14);
+            Console.SetCursorPosition(30, 14);
             Console.WriteLine("...or Esc to quit");            
 
             ConsoleKeyInfo key = Console.ReadKey();
